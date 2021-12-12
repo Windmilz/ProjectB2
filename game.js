@@ -19,11 +19,22 @@ let kitchen = new Prompt(
       "You give up looking for your shoes. You arrive at work and get fired for not wearing them. Good job",
       true,
     ),
-    new Choice("Look", "You start looking for your shoes", false),
+    new Choice("Look", "You start looking for your shoes. You search all over your house and find them in your kitchen. Why are they in your kitchen?", false),
+  ],
+);
+let keys = new Prompt(
+  "With shoes in hand, you start runnin to the door. Halfway out the door you realize you don't have your keys",
+  [
+    new Choice(
+      "Get back in bed",
+      "At this point, you've had enough for today and you just get back in bed. Who cares about work anyways.",
+      false,
+    ),
+    new Choice("Look", "You turn your house upsidedown and finally found your keys underneath your TV. Why did you leave these here. Are you going crazy?", true),
   ],
 );
 
-let prompts = [bedroom, kitchen];
+let prompts = [bedroom, kitchen, keys];
 let game = new Game(prompts);
 
 game.init();
