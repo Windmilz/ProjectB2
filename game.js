@@ -1,3 +1,16 @@
+let StartingScreen = new Prompt("Welcome to Work! Would you like to play?", [
+  new Choice(
+    "No",
+    "I Understand. Work sucks. Well You can just click off and have a great day then!",
+    true,
+  ),
+  new Choice(
+    "Yes",
+    "Generating world....",
+    false,
+  ),
+]);
+
 let bedroom = new Prompt("Your alarm has been beeping forever", [
   new Choice(
     "Ignore alarm",
@@ -29,7 +42,7 @@ let keys = new Prompt(
       "At this point, you've had enough for today and you just get back in bed. Who cares about work anyways.",
       true,
     ),
-    new Choice("Look", "You turn your house upsidedown and finally found your keys underneath your TV. Why did you leave these here. Are you going crazy?", false),
+    new Choice("Search for Keys", "You turn your house upsidedown and finally found your keys underneath your TV. Why did you leave these here. Are you going crazy?", false),
   ],
 );
 let car = new Prompt(
@@ -73,10 +86,10 @@ let GameOver = new Prompt(
       "",
       true,
     ),
-    new Choice("Play Again", "", true),
+    new Choice("Refresh to Play Again", "Refresh to play again", true),
   ],
 );
-let prompts = [bedroom, kitchen, keys, car, work, loop , GameOver];
+let prompts = [ StartingScreen , bedroom, kitchen, keys, car, work, loop , GameOver];
 let game = new Game(prompts);
 
 game.init();
